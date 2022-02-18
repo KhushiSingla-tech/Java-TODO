@@ -40,10 +40,10 @@ CREATE TABLE `todo` (
 --
 
 INSERT INTO `todo` (`ID`, `name`, `todo`, `status`, `UID`) VALUES
-(6, 'Khushi', 'Java', 'Pending', 2),
-(7, 'Palak', 'C++', 'Pending', 5),
-(8, 'Palak', 'Python', 'Pending', 5),
-(9, 'Khushi', 'SQL', 'Pending', 2);
+(6, 'A', 'Java', 'Pending', 2),
+(7, 'B', 'C++', 'Pending', 5),
+(8, 'C', 'Python', 'Pending', 5),
+(9, 'D', 'SQL', 'Pending', 2);
 
 -- --------------------------------------------------------
 
@@ -63,8 +63,8 @@ CREATE TABLE `user` (
 --
 
 INSERT INTO `user` (`ID`, `Name`, `Email`, `Password`) VALUES
-(2, 'Khushi Singla', 'khushisingla2899@gmail.com', '123'),
-(5, 'Khushi', 'khushisingla28@gmail.com', '2830@412Ks');
+(2, 'Khushi Singla', 'khushisingla@gmail.com', '123'),
+(5, 'Khushi', 'khushisingla11@gmail.com', '1130@312Ab');
 
 --
 -- Indexes for dumped tables
