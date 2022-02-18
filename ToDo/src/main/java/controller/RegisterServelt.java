@@ -35,6 +35,7 @@ public class RegisterServelt extends HttpServlet {
 		{
 			session.setAttribute("msg", "Added Successfully");
 			session.setAttribute("auth", user.getEmail());
+			session.setAttribute("id", ud.getId(user.getEmail()));
 			response.sendRedirect("index.jsp");
 		}
 		else

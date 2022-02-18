@@ -22,10 +22,10 @@ public class TodoServelt extends HttpServlet {
 		String todo = request.getParameter("todo");
 		String status = request.getParameter("status");
 		
-		TodoDao td = new TodoDao(GetConnection.getCon());
-		boolean f = td.addTodo(username, todo, status);
-		
 		HttpSession session = request.getSession();
+		
+		TodoDao td = new TodoDao(GetConnection.getCon());
+		boolean f = td.addTodo(username, todo, status, (int) session.getAttribute("id"));
 		
 		if(f)
 		{

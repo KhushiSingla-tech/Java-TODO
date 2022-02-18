@@ -19,17 +19,18 @@ public class TodoDao {
 		this.conn = conn;
 	}
 	
-	public boolean addTodo(String name, String todo, String status)
+	public boolean addTodo(String name, String todo, String status, int uid)
 	{
 		boolean f = false;
 		try
 		{
-			sql = "insert into todo(name, todo, status) values(?,?,?)";
+			sql = "insert into todo(name, todo, status, UID) values(?,?,?,?)";
 			
 			ps = conn.prepareStatement(sql);
 			ps.setString(1, name);
 			ps.setString(2, todo);
 			ps.setString(3, status);
+			ps.setInt(4, uid);
 			
 			int i = ps.executeUpdate();
 			
@@ -46,15 +47,16 @@ public class TodoDao {
 		return f;
 	}
 	
-	public List<ToDo> getTodo()
+	public List<ToDo> getTodo(int uid)
 	{
 		List<ToDo> list = new ArrayList<ToDo>();
 		ToDo toDo = null;
 		
 		try
 		{
-			sql = "select * from todo";
+			sql = "select * from todo where UID=?";
 			ps = conn.prepareStatement(sql);
+			ps.setInt(1, uid);
 			ResultSet rs = ps.executeQuery();
 			
 			while(rs.next())

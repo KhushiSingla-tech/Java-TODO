@@ -70,7 +70,7 @@
 		<table class="table table-striped" border="1px">
 			<thead>
 				<tr>
-					<th scope="col">ID</th>
+					<th scope="col">Sr.no</th>
 					<th scope="col">Name</th>
 					<th scope="col">TODO</th>
 					<th scope="col">Status</th>
@@ -80,13 +80,15 @@
 			<tbody>
 			<%
 			TodoDao td = new TodoDao(GetConnection.getCon());
-					List<ToDo> list = td.getTodo();
+					List<ToDo> list = td.getTodo((int)session.getAttribute("id"));
+					int count = 0;
 					
 					for(ToDo user : list)
 					{
+						count++;
 			%>
 					<tr>
-					<th scope="row"><%=user.getId() %></th>
+					<th scope="row"><%=count %></th>
 					<td scope="col"><%=user.getName() %></td>
 					<td><%=user.getTodo() %></td>
 					<td><%=user.getStatus() %></td>

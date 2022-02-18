@@ -32,6 +32,7 @@ public class LoginServelt extends HttpServlet {
 		{
 			session.setAttribute("msg", "Login Successfully");
 			session.setAttribute("auth", email);
+			session.setAttribute("id", ud.getId(email));
 			response.sendRedirect("index.jsp");
 		}
 		else

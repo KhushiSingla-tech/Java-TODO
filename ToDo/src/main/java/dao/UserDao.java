@@ -90,4 +90,28 @@ public class UserDao {
 		
 		return f;
 	}
+
+	public int getId(String email) {
+		
+		int id = 0;
+		
+		try
+		{
+			sql = "select id from user where Email=?";
+			ps = conn.prepareStatement(sql);
+			ps.setString(1, email);
+			
+			rs = ps.executeQuery();
+			while(rs.next())
+			{
+				id = rs.getInt("ID");
+			}
+		}
+		catch(Exception e)
+		{
+			e.printStackTrace();
+		}
+		
+		return id;
+	}
 }
